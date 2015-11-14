@@ -1,0 +1,73 @@
+/**
+ * @package shortcut - pragmatic ownCloud share url shortener
+ * @category internet
+ * @author Christian Reiner
+ * @copyright 2015-2015 Christian Reiner <foss@christian-reiner.info>
+ * @license GNU Affero General Public license (AGPL)
+ * @link information https://github.com/arkascha/owncloud-shortcut/wiki
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+ * License as published by the Free Software Foundation; either
+ * version 3 of the license, or any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public
+ * License along with this library.
+ * If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+/**
+ * @file css/share.css
+ * @author Christian Reiner
+ */
+
+/* a container to allow positioning of elements */
+#shortcutBrick {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* animated button to toggle between short and long url */
+#shortcutBrick #shortcutButton {
+    content: " ";
+    position: absolute;
+    z-index: +1;
+    top: -2px;
+    left: 4px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 16px;
+    width: 32px;
+    opacity: 0.5;
+    background: url('../img/scale.svg') top left no-repeat;
+    background-size: contain;
+}
+
+/* the actual urls */
+#shortcutBrick #linkText {
+    display: inline-block !important;
+}
+#shortcutBrick #shortcutText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+/* active shortcut */
+#shortcutBrick.active #shortcutText {
+    opacity: 1;
+    pointer-events: all;
+    background-color: white;
+}
